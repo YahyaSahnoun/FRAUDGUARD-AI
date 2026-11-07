@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://fraudguard.local/contracts/training_label.v1.schema.json",
+  "title": "Offline synthetic training label v1",
+  "required": [
+    "schema_version",
+    "transaction_id",
+    "is_fraud"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "transaction_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "is_fraud": {
+      "type": "integer",
+      "enum": [
+        0,
+        1
+      ]
+    }
+  }
+}

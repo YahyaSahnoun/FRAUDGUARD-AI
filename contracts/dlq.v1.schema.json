@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://fraudguard.local/contracts/dlq.v1.schema.json",
+  "title": "FraudGuard rejected event envelope v1",
+  "required": [
+    "schema_version",
+    "error_code",
+    "rejected_at",
+    "source_topic",
+    "source_partition",
+    "source_offset",
+    "record_key"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "error_code": {
+      "type": "string",
+      "enum": [
+        "invalid_json",
+        "schema_validation_failed",
+        "unsupported_schema_version",
+        "processing_error"
+      ]
+    },
+    "error_detail": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "rejected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_topic": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "source_partition": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_offset": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "record_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "transaction_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

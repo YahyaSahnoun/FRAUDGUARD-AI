@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://fraudguard.local/contracts/fraud_alert.v1.schema.json",
+  "title": "FraudGuard alert event v1",
+  "required": [
+    "schema_version",
+    "alert_id",
+    "transaction_id",
+    "event_time",
+    "scored_at",
+    "risk_score",
+    "threshold",
+    "model_version",
+    "reason_codes",
+    "status"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "alert_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "transaction_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scored_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "risk_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "model_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "type": "string",
+      "const": "new"
+    }
+  }
+}

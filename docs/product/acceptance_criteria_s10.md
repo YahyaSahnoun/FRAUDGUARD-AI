@@ -3,7 +3,7 @@
 **Epic / sprint :** Sprint 1 — Fondations, architecture et Kafka  
 **Jira import ID :** 10  
 **Story :** Définir périmètre MVP, personas et parcours alerte  
-**Statut :** documents produits, revue et approbation utilisateur en attente.
+**Statut :** approuvée par le responsable du projet le 2026-11-07 (validation en conversation ; Jira non synchronisé).
 
 ## Objectifs spécifiques de S10
 
@@ -14,7 +14,7 @@
 - [x] Identifier les principaux chemins d'erreur et statuts d'alerte.
 - [x] Définir les dimensions de qualité et un plan de mesure des SLO.
 - [x] Faire une première revue de cohérence documentaire avec le cahier des charges et le README fournis.
-- [ ] Obtenir la revue/validation du responsable du projet.
+- [x] Obtenir la revue/validation du responsable du projet (2026-11-07, validation en conversation).
 
 ## Preuves produites
 
@@ -31,6 +31,6 @@
 - L'état `needs_more_info` et le retry `failed` devront recevoir des transitions détaillées en sprints 4–5.
 - Le diagramme est logique et sera affiné en S11 ; le chemin réel des features temps réel reste à concevoir.
 
-## Revue demandée
+## Décision de revue
 
-Valider le périmètre, les trois personas, le parcours humain et la priorité MVP local. Après validation, passage à **S11 : définir contrats de données et architecture**.
+**APPROUVÉ — 2026-11-07.** Périmètre, trois personas et parcours humain validés par le responsable du projet dans la conversation. **Jira non mis à jour automatiquement.** Prochaine Story : S11.

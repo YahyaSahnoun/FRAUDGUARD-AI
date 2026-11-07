@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://fraudguard.local/contracts/transaction.v1.schema.json",
+  "title": "FraudGuard transaction inference event v1",
+  "required": [
+    "schema_version",
+    "transaction_id",
+    "customer_id",
+    "event_time",
+    "amount",
+    "currency",
+    "merchant_category",
+    "channel",
+    "country"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "transaction_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "customer_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "amount": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "merchant_category": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "channel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "country": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    }
+  },
+  "not": {
+    "required": [
+      "is_fraud"
+    ]
+  }
+}
