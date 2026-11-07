@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local data and logs
+*.log
+data/raw/
+data/processed/
+
+# IDE
+.vscode/
+.idea/
