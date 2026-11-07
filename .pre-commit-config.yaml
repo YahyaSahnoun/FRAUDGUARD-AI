@@ -12,3 +12,9 @@ repos:
         entry: uv run --no-sync ruff format
         language: system
         types: [python]
+
+      - id: detect-secrets
+        name: Detect Secrets
+        entry: uv run --no-sync detect-secrets-hook --baseline .secrets.baseline
+        language: system
+        types: [text]
