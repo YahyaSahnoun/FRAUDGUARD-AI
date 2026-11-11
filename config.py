@@ -1,1 +1,1 @@
-PROJECT_NAME = "FraudGuard AI - Version A"
+PROJECT_NAME = "FraudGuard AI"
