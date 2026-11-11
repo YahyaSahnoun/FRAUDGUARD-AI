@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
-from jsonschema import Draft202012Validator, FormatChecker, ValidationError
+from jsonschema import Draft202012Validator, FormatChecker, ValidationError, validate
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -47,7 +47,7 @@ def test_transaction_accepts_nonbreaking_extra_field():
 @pytest.mark.parametrize(
     "change",
     [
-        {"amount": -1},
+        {"amount": "invalid"},
         {"schema_version": "2.0"},
         {"event_time": "not-a-date"},
         {"is_fraud": 1},
@@ -117,3 +117,10 @@ def test_valid_label():
     }
 
     validator("training_label").validate(label)
+
+
+@pytest.mark.parametrize("amount", [-100.50, 0, 150.75])
+def test_accept_signed_amounts(amount):
+    data = {**transaction(), "amount": amount}
+
+    validate("transaction.v1.schema.json", data)

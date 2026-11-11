@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "fraudguard-ai",
+			"path": "."
+		},
+		{
+			"name": "tests",
+			"path": "../../Downloads/FraudGuard_AI_S10_Approved_S11_Design/fraudguard-ai/tests"
+		}
+	],
+	"settings": {}
+}

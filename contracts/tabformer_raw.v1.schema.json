@@ -1,0 +1,57 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FraudGuard TabFormer raw event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_row_id",
+    "raw"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "source_row_id": {
+      "type": "string",
+      "pattern": "^tx_[0-9]{10,}$"
+    },
+    "raw": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "User",
+        "Card",
+        "Year",
+        "Month",
+        "Day",
+        "Time",
+        "Amount",
+        "Use Chip",
+        "Merchant Name",
+        "Merchant City",
+        "Merchant State",
+        "Zip",
+        "MCC",
+        "Errors?"
+      ],
+      "properties": {
+        "User": {"type": "string"},
+        "Card": {"type": "string"},
+        "Year": {"type": "string"},
+        "Month": {"type": "string"},
+        "Day": {"type": "string"},
+        "Time": {"type": "string"},
+        "Amount": {"type": "string"},
+        "Use Chip": {"type": "string"},
+        "Merchant Name": {"type": "string"},
+        "Merchant City": {"type": "string"},
+        "Merchant State": {"type": "string"},
+        "Zip": {"type": "string"},
+        "MCC": {"type": "string"},
+        "Errors?": {"type": "string"}
+      }
+    }
+  }
+}
