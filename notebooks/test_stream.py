@@ -1,1 +1,1 @@
-print("hello world my name is yahya")
+print("FraudGuard AI - Kafka and Spark Structured Streaming demonstration")
